@@ -4,6 +4,7 @@ import { useGeoLocation } from "@/hooks/use-geolocation";
 import { useForecastQuery, useReverseGeoCodeQuery, useWeatherQuery } from "@/hooks/use-weather";
 
 import { Button } from "@/components/ui/button";
+import { CurrentWeather } from "@/components/current-weather";
 import WeatherSkeleton from "@/components/loading-skeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
@@ -100,6 +101,19 @@ const WeatherDashboard = () => {
                 >
                     <RefreshCw className={`h-4 w-4 ${weatherQuery.isFetching ? "animate-spin" : ""}`}/>
                 </Button>
+            </div>
+
+            <div>
+                <div className="grid gap-6">
+                    {/* current weather */}
+                    <CurrentWeather data={weatherQuery.data} locationName={locationName} />
+                    {/* hourly temperature */}
+                </div>
+
+                <div>
+                    {/* Details */}
+                    {/* forecast */}
+                </div>
             </div>
         </div>
     )
