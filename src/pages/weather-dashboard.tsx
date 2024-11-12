@@ -3,11 +3,13 @@ import { AlertTriangle, MapPin, RefreshCw } from "lucide-react";
 import { useGeoLocation } from "@/hooks/use-geolocation";
 import { useForecastQuery, useReverseGeoCodeQuery, useWeatherQuery } from "@/hooks/use-weather";
 
-import { Button } from "@/components/ui/button";
+import WeatherDetails from "@/components/weather-details";
 import { CurrentWeather } from "@/components/current-weather";
 import WeatherSkeleton from "@/components/loading-skeleton";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import HourlyTemperature from "@/components/hourly-temperature";
+
+import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const WeatherDashboard = () => {
     const { coordinates, error: locationError, getLocation, isLoading: locationLoading } = useGeoLocation();
@@ -114,6 +116,7 @@ const WeatherDashboard = () => {
 
                 <div>
                     {/* Details */}
+                    <WeatherDetails data={weatherQuery.data} />
                     {/* forecast */}
                 </div>
             </div>
