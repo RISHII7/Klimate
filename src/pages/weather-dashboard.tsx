@@ -11,6 +11,7 @@ import WeatherForecast  from "@/components/weather-forecast";
 
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import FavoriteCities from "@/components/favorite-cities";
 
 const WeatherDashboard = () => {
     const { coordinates, error: locationError, getLocation, isLoading: locationLoading } = useGeoLocation();
@@ -95,6 +96,7 @@ const WeatherDashboard = () => {
 
     return (
         <div className="space-y-4">
+            <FavoriteCities />
             <div className="flex items-center justify-between">
                 <h1 className="text-xl font-bold tracking-tight">My Location</h1>
                 <Button
