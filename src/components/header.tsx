@@ -3,6 +3,8 @@ import { Moon, Sun } from "lucide-react";
 
 import { useTheme } from "@/context/theme-provider";
 
+import CitySearch from "@/components/city-search";
+
 const Header = () => {
 
     const { theme, setTheme } = useTheme();
@@ -16,8 +18,9 @@ const Header = () => {
                     <img src={theme === "dark" ? "/logo.png" : "/logo2.png"} alt="Klimate Logo" className="h-14" />
                 </Link>
 
-                <div>
+                <div className="flex gap-4">
                     {/* search */}
+                    <CitySearch />
                     {/* themeToggle */}
                     <div 
                         onClick={() => setTheme(isDark ? "light" : "dark")}

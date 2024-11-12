@@ -23,7 +23,7 @@ interface DailyForecast {
     };
 }
 
- const WeatherForecast = ({ data }: WeatherForecastProps) => {
+const WeatherForecast = ({ data }: WeatherForecastProps) => {
     
     // Group forecast by day and get daily min/max
     const dailyForecasts = data.list.reduce((acc, forecast) => {
