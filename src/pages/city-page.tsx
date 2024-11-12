@@ -53,11 +53,8 @@ const CityPage = () => {
             </div>
 
             <div className="grid gap-6">
-                <div className="flex flex-col gap-4">
-                    <CurrentWeather data={weatherQuery.data} />
-                    <HourlyTemperature data={forecastQuery.data} />
-                </div>
-
+                <CurrentWeather data={weatherQuery.data} />
+                <HourlyTemperature data={forecastQuery.data} />
                 <div className="grid gap-6 md:grid-cols-2 items-start">
                     <WeatherDetails data={weatherQuery.data} />
                     <WeatherForecast data={forecastQuery.data} />

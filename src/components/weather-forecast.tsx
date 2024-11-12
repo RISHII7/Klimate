@@ -24,7 +24,7 @@ interface DailyForecast {
 }
 
 const WeatherForecast = ({ data }: WeatherForecastProps) => {
-    
+
     // Group forecast by day and get daily min/max
     const dailyForecasts = data.list.reduce((acc, forecast) => {
         const date = format(new Date(forecast.dt * 1000), "yyyy-MM-dd");
@@ -85,7 +85,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
                             </div>
 
                             <div className="flex justify-end gap-4">
-                                <span className="flex items-center gap-1">
+                                <span className="hidden md:flex items-center gap-1">
                                     <Droplets className="h-4 w-4 text-blue-500" />
                                     <span className="text-sm">{day.humidity}%</span>
                                 </span>
