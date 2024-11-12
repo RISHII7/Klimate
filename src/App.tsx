@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/city/:cityName" element={<CityPage />} />
               </Routes>
             </Layout>
+            <Toaster />
           </ThemeProvider>
         </BrowserRouter>
         <ReactQueryDevtools initialIsOpen={false} />
